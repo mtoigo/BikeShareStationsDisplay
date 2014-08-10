@@ -1,0 +1,39 @@
+$huge: #ef018d;
+
+body {
+  margin: 30px;
+
+  .huge-header {font-family: Huge}
+  .huge {font-family: HugeBody}
+
+  .bikeshare {
+    border-color: $huge;
+
+    .panel-heading {
+      background: $huge;
+      border-color: $huge;
+    }
+
+    table {
+
+      tr td {
+        padding-left: 15px;
+
+        &.stationName {
+          width: 50%;
+        }
+
+        .progress {
+          margin-bottom: 0px;
+
+          .progress-bar {
+            background-color: $huge;
+          }
+        }
+      }
+    }
+  }
+}
+
+@font-face {font-family: HugeBody; src: url('http://www.hugeinc.com/content/css/fonts/GalaxieCopernicus-Book.woff')}
+@font-face {font-family: Huge; src: url('http://www.hugeinc.com/content/css/fonts/huge_agb_v5-webfont.woff')} 

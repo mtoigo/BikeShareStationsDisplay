@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="default.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+		<script src="main.js"></script>
+		<title>HUGE DC Tech TV</title>
+	</head>
+	<body>
+		<div class="panel panel-primary bikeshare" ng-controller="bikeshare">
+		  <div class="panel-heading">
+		    <h3 class="panel-title huge-header">Nearby Bikeshare Stations</h3>
+		  </div>
+		  <table class="table huge">
+    		<tr ng-repeat="station in stations">
+    			<td class="stationName">{{ station.name }}</td>
+    			<td>
+    				<div class="progress" ng-if="station.bikes > 0">
+						  <div class="progress-bar" role="progressbar" ng-style="{ 'width': station.percent }">
+						    {{ station.bikes }} / {{ station.totalBikes }} Bikes
+						  </div>
+						</div>
+						<div ng-if="station.bikes == 0">
+							No Bikes Available
+						</div>
+    			</td>
+    		</tr>
+  		</table>
+		</div>
+	</body>
+</html>
