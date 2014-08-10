@@ -6,4 +6,4 @@ var proxy = require('proxy-middleware');
 connect()
 	.use(serveStatic('public'))
   .use('/bikeshare', proxy(url.parse('http://www.capitalbikeshare.com/data/stations')))
-	.listen(3000);
+	.listen(process.env.PORT || 3000);
