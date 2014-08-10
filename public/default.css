@@ -1,0 +1,26 @@
+body {
+  margin: 30px; }
+  body .huge-header {
+    font-family: Huge; }
+  body .huge {
+    font-family: HugeBody; }
+  body .bikeshare {
+    border-color: #ef018d; }
+    body .bikeshare .panel-heading {
+      background: #ef018d;
+      border-color: #ef018d; }
+    body .bikeshare table tr td {
+      padding-left: 15px; }
+      body .bikeshare table tr td.stationName {
+        width: 50%; }
+      body .bikeshare table tr td .progress {
+        margin-bottom: 0px; }
+        body .bikeshare table tr td .progress .progress-bar {
+          background-color: #ef018d; }
+
+@font-face {
+  font-family: HugeBody;
+  src: url("http://www.hugeinc.com/content/css/fonts/GalaxieCopernicus-Book.woff"); }
+@font-face {
+  font-family: Huge;
+  src: url("http://www.hugeinc.com/content/css/fonts/huge_agb_v5-webfont.woff"); }
