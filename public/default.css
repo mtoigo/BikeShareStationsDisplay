@@ -4,19 +4,33 @@ body {
     font-family: Huge; }
   body .huge {
     font-family: HugeBody; }
-  body .bikeshare {
+  body .panel {
+    width: 49%;
+    float: left;
     border-color: #ef018d; }
-    body .bikeshare .panel-heading {
+    body .panel:last-child {
+      float: right; }
+    body .panel .panel-heading {
       background: #ef018d;
       border-color: #ef018d; }
-    body .bikeshare table tr td {
+    body .panel td {
       padding-left: 15px; }
-      body .bikeshare table tr td.stationName {
-        width: 50%; }
-      body .bikeshare table tr td .progress {
-        margin-bottom: 0px; }
-        body .bikeshare table tr td .progress .progress-bar {
-          background-color: #ef018d; }
+    body .panel.bikeshare .stationName {
+      width: 50%; }
+    body .panel.bikeshare .progress {
+      margin-bottom: 0px; }
+      body .panel.bikeshare .progress .progress-bar {
+        background-color: #ef018d; }
+    body .panel.metro td {
+      padding-bottom: 2px; }
+      body .panel.metro td.lineColors div {
+        display: inline-block;
+        height: 25px;
+        width: 25px; }
+        body .panel.metro td.lineColors div.green {
+          background: #12aa0a; }
+        body .panel.metro td.lineColors div.yellow {
+          background: #f9f60b; }
 
 @font-face {
   font-family: HugeBody;

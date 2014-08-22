@@ -1,15 +1,22 @@
-var bikeshare = function($scope, $http) {
+var hugeDCTV = angular.module('hugeDCTV', []);
+
+hugeDCTV.constant('appConfig', {
+  bikeshareXMLFeed: '/bikeshare/bikeStations.xml',
+  officeLocation: {
+    lat: Math.abs(38.9072561),
+    lon: Math.abs(-77.0238183)
+  },
+  refreshIntervalMinutes: 3
+});
+
+
+hugeDCTV.controller('bikeshare',  ['$scope' , '$http', 'appConfig', function($scope, $http, appConfig) {
   
-  var officeLocation = {
-    'lat': Math.abs(38.9072561),
-    'lon': Math.abs(-77.0238183)
-  };
-
-  var bikeshareXMLFeed = '/bikeshare/bikeStations.xml';
-
   var updateStations = function() {
-    console.log('UPDATING');
-    $http({method: 'GET', url: bikeshareXMLFeed}).
+
+    console.log('Updating bikeshare stations');
+
+    $http({method: 'GET', url: appConfig.bikeshareXMLFeed}).
       success(function(data, status, headers, config) {
 
         var parser = new DOMParser();
@@ -34,7 +41,7 @@ var bikeshare = function($scope, $http) {
             bikes: bikes,
             totalBikes: totalBikes,
             percent: Math.round((bikes / totalBikes) * 100) + '%',
-            distance: Math.sqrt((Math.abs(officeLocation.lat - stationLat)) + (Math.abs(officeLocation.lon - Math.abs(stationLon))))
+            distance: Math.sqrt((Math.abs(appConfig.officeLocation.lat - stationLat)) + (Math.abs(appConfig.officeLocation.lon - Math.abs(stationLon))))
           };
           $scope.stations.push(station);
         }
@@ -43,5 +50,10 @@ var bikeshare = function($scope, $http) {
   }
 
   updateStations();
-  setInterval(updateStations, 180000)
-};
+  setInterval(updateStations, appConfig.refreshIntervalMinutes * 1000 * 60);
+}]);
+
+hugeDCTV.controller('metro',  ['$scope' , '$http', 'appConfig', function($scope, $http, appConfig) {
+  // http://api.wmata.com/StationPrediction.svc/json/GetPrediction/E01?api_key=kfgpmgvfgacx98de9q3xazww
+  console.log('metro controller');
+}]);

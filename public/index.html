@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="hugeDCTV">
 	<head>
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<link rel="stylesheet" href="default.css">
@@ -9,6 +9,7 @@
 		<title>HUGE DC Tech TV</title>
 	</head>
 	<body>
+
 		<div class="panel panel-primary bikeshare" ng-controller="bikeshare">
 		  <div class="panel-heading">
 		    <h3 class="panel-title huge-header">Nearby Bikeshare Stations</h3>
@@ -29,5 +30,36 @@
     		</tr>
   		</table>
 		</div>
+
+    <div class="panel panel-primary metro" ng-controller="metro">
+      <div class="panel-heading">
+        <h3 class="panel-title huge-header">Shaw Metro Station</h3>
+      </div>
+      <table class="table huge">
+        <tr>
+          <td class="lineColors">
+            <div class="yellow"></div>
+          </td>
+          <td>
+              Franconia-Springfield
+          </td>
+          <td>
+            3 Min
+          </td>
+        </tr>
+        <tr>
+          <td class="lineColors">
+            <div class="green"></div>
+          </td>
+          <td>
+              Franconia-Springfield
+          </td>
+          <td>
+            3 Min
+          </td>
+        </tr>
+      </table>
+    </div>
+
 	</body>
 </html>

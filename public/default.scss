@@ -1,4 +1,6 @@
 $huge: #ef018d;
+$metro-green: #12aa0a;
+$metro-yellow: #f9f60b;
 
 body {
   margin: 30px;
@@ -6,28 +8,55 @@ body {
   .huge-header {font-family: Huge}
   .huge {font-family: HugeBody}
 
-  .bikeshare {
+  .panel {
+    width: 49%;
+    float: left;
     border-color: $huge;
+
+    &:last-child {
+      float: right;
+    }
 
     .panel-heading {
       background: $huge;
       border-color: $huge;
     }
 
-    table {
+    td {
+      padding-left: 15px;
+    }
 
-      tr td {
-        padding-left: 15px;
+    &.bikeshare {
 
-        &.stationName {
-          width: 50%;
+      .stationName {
+        width: 50%;
+      }
+
+      .progress {
+        margin-bottom: 0px;
+
+        .progress-bar {
+          background-color: $huge;
         }
+      }
+    }
 
-        .progress {
-          margin-bottom: 0px;
+    &.metro {
 
-          .progress-bar {
-            background-color: $huge;
+      td {
+        padding-bottom: 2px;
+
+        &.lineColors div {
+          display: inline-block;
+          height: 25px;
+          width: 25px;
+
+          &.green {
+            background: $metro-green;
+          }
+
+          &.yellow {
+            background: $metro-yellow;
           }
         }
       }
